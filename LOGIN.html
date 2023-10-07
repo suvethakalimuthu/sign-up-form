@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signup-form">
+            <input type="text" id="email" placeholder="User Email">
+            <input type="password" id="password" placeholder="Password">
+            <button type="button" id="signup-btn">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signup-btn').addEventListener('click',
+function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Regular expression for email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Regular expression for password validation
+            const passwordRegex =
+/^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*()_+])[\w!@#$%^&*()_+]{8,}$/;
+
+            if (!emailRegex.test(email)) {
+                alert('Invalid email address. Please enter a valid email.');
+            } else if (!passwordRegex.test(password)) {
+                alert('Invalid password. Password must be at least 8
+characters long and contain at least one uppercase letter, one special
+character, and one number.');
+            } else {
+                alert('Sign up successful!');
+            }
+        });
+    </script>
+</body>
+</html>
