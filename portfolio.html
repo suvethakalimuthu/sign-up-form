@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+        <h1>My Portfolio</h1>
+        <button id="mode-toggle">Toggle Dark Mode</button>
+    </header>
+    <main>
+        <section class="projects">
+            <!-- Add your projects here -->
+            <div class="project">
+                <h2>Project 1</h2>
+                <p>Description of Project 1.</p>
+            </div>
+            <div class="project">
+                <h2>Project 2</h2>
+                <p>Description of Project 2.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    flex: 0 1 calc(33.333% - 20px);
+    transition: background-color 0.5s;
+}
+
+.dark-mode {
+    background-color: #d6bf5a;
+    color: #012077;
+}
+
+.dark-mode .project {
+    background-color: #bbbec0;
+    border-color: #2b09ec;
+}
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const modeToggle = document.getElementById("mode-toggle");
+    const body = document.body;
+
+    modeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+    });
+});
+
+</script>
